@@ -13,12 +13,8 @@
 
 -->
     <div class="test">
-
-        <h1>The count is {{count}}</h1>
-
-        <button v-on:click="incremenet(2)" >incremenet</button>
-
-        <button @click="decrement" >decrement</button>
+<!-- this is how we can show function's values -->
+        <h1>The greet is {{showGreeting()}}</h1>
     </div>
 </body>
 <script>
@@ -43,6 +39,9 @@
             decrement(){
                 this.count--
             },
+            showGreeting(){
+                return "Namastey Dunia"
+            }
         }
     }
     const vm = Vue.createApp(obj).mount('.test')

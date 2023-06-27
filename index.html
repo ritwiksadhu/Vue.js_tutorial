@@ -8,8 +8,17 @@
 
 </head>
 <body>
+
+    /* 
+        these {{}} brackets are called interpolation
+        we can write simple js inside of it
+        it behaves similar to '{}' in react
+    */
     <div class="test">
         <h1>{{variableName}}</h1>
+        <h2>{{ false ? "another greeting" :" no greeting " }}</h2>
+        <h2>{{ 1+1 }}</h2>
+
     </div>
 </body>
 <script>
@@ -17,13 +26,11 @@
     const obj = {
         data(){
             return {
-                variableName : "Hello world!"
+                variableName : "Hello world!",
+                id:"123"
             }
         }
     }
     const vm = Vue.createApp(obj).mount('.test')
-
-    // we will be able to check the variable's value like this
-    console.log(vm.variableName)
 </script>
 </html>

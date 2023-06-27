@@ -9,13 +9,25 @@
 </head>
 <body>
 <!-- 
-    we can dynamically put html usine v-html attribute
- -->
+
+    we can use eventHandlers in it
+
+-->
     <div class="test">
-        <div v-id=[dynamicValue]>This span has id {{staticValue}}</div>
+
+        <h1>The count is {{count}}</h1>
+
+        <!--long hand example with  Increment function   -->
+        <button v-on:click="incremenet" >incremenet</button>
+
+
+        <!-- shorthand example with decrement function  -->
+        <button @:click="decrement" >decrement</button>
     </div>
 </body>
 <script>
+
+    // to make functions we need to make a object with methods, here we dont have the issue with "this" so it will automatically find the variable if it is present inside.
 
     const obj = {
         data(){
@@ -25,8 +37,20 @@
                 class:"someClass",
                 htmlEG : "<h1>This is a dynamic html</h1>",
                 staticValue:"007",
-                dynamicValue : 'staticValue'
+                dynamicValue : 'staticValue',
+                count:1
             }
+        },
+
+
+        // to make functions we need to make this methods object, 
+        methods : {
+            incremenet(){
+                this.count++
+            },
+            decrement(){
+                this.count--
+            },
         }
     }
     const vm = Vue.createApp(obj).mount('.test')

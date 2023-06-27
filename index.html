@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Guide</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <!--5.............. -->
+    <div class="test">
+        <h1>{{variableName}}</h1>
+    </div>
+</body>
+<script>
+
+/* STEPS 
+1. create an object
+2. create a method inside object
+3. return another object with some key value pairs(we will us them as variables)
+4. createApp with vue.js and mount it with respective tag's class or id, (id preferable)
+5. access the variable in that tag inside {{}}
+*/
+
+    // 1...........
+    const obj = {
+        // 2.................
+        data(){
+            // 3...........
+            return {
+                variableName : "Hello world!"
+            }
+        }
+    }
+
+
+    // 4............
+    // METHOD 4.1 
+    // const vueApp = Vue.createApp(obj)
+    // const vm = vueApp.mount('#test')
+
+    // METHOD 4.2 
+    const vm = Vue.createApp(obj).mount('.test')
+</script>
+</html>

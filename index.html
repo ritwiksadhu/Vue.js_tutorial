@@ -8,39 +8,16 @@
 
 </head>
 <body>
-
-<!--     
-        1. interpolation expression are given by 'v-something'
-        2. like the span has an id with a variable
-        3. in this case we are binding id with v-bind, but we can bind attribute
-
-        
-
-        NOTE: we can remember it like we are binding the vue variables with our html same as we used to do in js binding
-     -->
+<!-- 
+    we can dynamically put html usine v-html attribute
+ -->
     <div class="test">
-        <span v-bind:id='id'>This span has id {{id}}</span>
-        <br/>
-        <br/>
+        <div v-html='htmlEG'>This span has id {{id}}</div>
+        <div>here i tried to be oversmart
+            <br/>
+            {{htmlEG}}
 
-        <span v-bind:class='"abc"'>This span has class named {{"class"}}</span>
-        <br/>
-        <br/>
-
-
-        <!-- we can also write js expressions here -->
-        <span v-bind:id='true ? "125" : "127"' >This span has id with a ternery operator </span>
-        <br/>
-        <br/>
-
-        
-        <!-- shorthand for v-bind -->
-        <span :id='true ? "129" : "130"' >This span has id with a ternery operator but in shorthand</span>
-        <br/>
-        <br/>
-
-        <!-- to give string we need to wrap it inside single quotes and as it it a string we need to wrap it in double quotes, and it will look like this👇 -->
-        <span v-bind:id='"124"'>This span has id with a string</span>
+        </div>
     </div>
 </body>
 <script>
@@ -50,7 +27,9 @@
             return {
                 variableName : "Hello world!",
                 id:"123",
-                class:"someClass"
+                class:"someClass",
+                htmlEG : "<h1>This is a dynamic html</h1>",
+
             }
         }
     }

@@ -18,7 +18,7 @@
         <h1>The count is {{count}}</h1>
 
         <!--long hand example with  Increment function   -->
-        <button v-on:click="incremenet" >incremenet</button>
+        <button v-on:click="incremenet(2)" >incremenet</button>
 
 
         <!-- shorthand example with decrement function  -->
@@ -45,8 +45,8 @@
 
         // to make functions we need to make this methods object, 
         methods : {
-            incremenet(){
-                this.count++
+            incremenet(arg){
+                this.count += arg
             },
             decrement(){
                 this.count--

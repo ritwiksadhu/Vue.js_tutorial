@@ -10,25 +10,18 @@
 <body>
 <!-- 
 
-    we can use eventHandlers in it
 
 -->
     <div class="test">
 
         <h1>The count is {{count}}</h1>
 
-        <!--long hand example with  Increment function   -->
         <button v-on:click="incremenet(2)" >incremenet</button>
 
-
-        <!-- shorthand example with decrement function  -->
-        <button @:click="decrement" >decrement</button>
+        <button @click="decrement" >decrement</button>
     </div>
 </body>
 <script>
-
-    // to make functions we need to make a object with methods, here we dont have the issue with "this" so it will automatically find the variable if it is present inside.
-
     const obj = {
         data(){
             return {
@@ -43,7 +36,6 @@
         },
 
 
-        // to make functions we need to make this methods object, 
         methods : {
             incremenet(arg){
                 this.count += arg
